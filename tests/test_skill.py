@@ -19,10 +19,10 @@ class SkillTests(unittest.TestCase):
 
     def test_contact_command_requires_explicit_confirmation(self):
         with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
-            reporters_api.main(["reveal-reporter", "--id", "123", "--idempotency-key", "one"])
+            reporters_api.main(["reveal-reporter", "--id", "123", "--idempotency-key", "one-reveal-operation"])
         with patch.object(reporters_api, "request", return_value={"data": {}}) as request:
-            reporters_api.main(["reveal-reporter", "--id", "123", "--confirm-contact-reveal", "--idempotency-key", "one"])
-        request.assert_called_once_with("/reporters/123/contacts/reveal", method="POST", body={}, confirm_contact_reveal=True, idempotency_key="one")
+            reporters_api.main(["reveal-reporter", "--id", "123", "--confirm-contact-reveal", "--idempotency-key", "one-reveal-operation"])
+        request.assert_called_once_with("/reporters/123/contacts/reveal", method="POST", body={}, confirm_contact_reveal=True, idempotency_key="one-reveal-operation")
 
     def test_article_command_preserves_fixed_page_size(self):
         with patch.object(reporters_api, "request", return_value={"data": {"items": []}}) as request:
