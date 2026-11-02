@@ -1,0 +1,15 @@
+{
+  "name": "reporters-agent-skills",
+  "version": "1.0.0",
+  "description": "Reporter and media-outlet research through Reporters.io",
+  "homepage": "https://reporters.io",
+  "repository": "https://github.com/ricciflow-api/reporters-agent-skills",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "reporter-research",
+      "path": "skills/reporter-research",
+      "description": "Research reporters, media outlets and published articles; reveal contacts only when explicitly requested and entitled."
+    }
+  ]
+}
