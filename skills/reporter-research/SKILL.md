@@ -11,15 +11,15 @@ Identify the topic, geography, relevant beat or outlet, and a bounded request bu
 
 ## Access requirements
 
-Creating API keys and all REST API and MCP use require an active Professional (Pro) subscription. This includes MCP initialization and tool discovery. Revoked or expired keys cannot authorize requests; existing keys also stop working when the account loses active Pro access. Stop on scope or subscription denial without trying another account or interface. The user can still manage and revoke existing keys after a downgrade. The public documentation and OpenAPI specification remain readable without a subscription.
+Creating API keys and all REST API and MCP use require an active Professional (Pro) subscription. This includes MCP initialization and tool discovery. To create a key, the user enters a name; all six API permissions are included automatically, with no automatic expiration. Accounts can have up to 10 active keys and may revoke keys. Revoked keys cannot authorize requests; existing keys also stop working when the account loses active Pro access. Stop on access or subscription denial without trying another account or interface. The user can still manage and revoke existing keys after a downgrade. The public documentation and OpenAPI specification remain readable without a subscription.
 
 ## Choose a workflow
 
 - Journalist discovery: search the topic and supported filters, then inspect a short list of profiles and article evidence for relevance.
 - Outlet research: search outlets, inspect one outlet, then review its reporters or articles as needed.
-- Contact access: only after the user explicitly asks for contacts, check current account entitlement and request the separate reveal tool for the selected reporter or outlet. An entitlement or scope denial is a stopping condition; do not route around it with a different tool or account.
+- Contact access: only after the user explicitly asks for contacts, check current account entitlement and request the separate reveal tool for the selected reporter or outlet. An access denial is a stopping condition; do not route around it with a different tool or account.
 
-Use MCP `structuredContent` for full results. REST responses use `{data, request_id}`. Search/list payloads expose `items`, `next_cursor` and `has_more`. Continue a search using the same query, filters and limit with the signed cursor. Snapshots are bounded to the top 100 matches; do not describe them as an exhaustive database export. Stop on empty or repeated results, missing/expired cursors, `has_more=false`, or the agreed request budget. See [operations](references/operations.md) for endpoints, scopes and retry behavior.
+Use MCP `structuredContent` for full results. REST responses use `{data, request_id}`. Search/list payloads expose `items`, `next_cursor` and `has_more`. Continue a search using the same query, filters and limit with the signed cursor. Snapshots are bounded to the top 100 matches; do not describe them as an exhaustive database export. Stop on empty or repeated results, missing/expired cursors, `has_more=false`, or the agreed request budget. See [operations](references/operations.md) for endpoints, included permission identifiers and retry behavior.
 
 ## REST fallback
 

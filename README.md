@@ -12,7 +12,7 @@ You can also copy `skills/reporter-research` to your project's skills directory.
 
 ## Configure and run
 
-With an active Professional (Pro) subscription, create a scoped key in [API-key management](https://reporters.io/account/api-keys). Connect the [hosted MCP server](https://github.com/ricciflow-api/reporters-mcp) or load your API key through the `REPORTERS_API_KEY` environment variable and run:
+With an active Professional (Pro) subscription, create a key by entering a name in [API-key management](https://reporters.io/account/api-keys). All six API permissions are included automatically, with no automatic expiration. Accounts can have up to 10 active keys, and keys can be revoked. Connect the [hosted MCP server](https://github.com/ricciflow-api/reporters-mcp) or load your API key through the `REPORTERS_API_KEY` environment variable and run:
 
 ```bash
 python3 skills/reporter-research/scripts/reporters_api.py search-reporters --query 'climate technology' --limit 10
@@ -22,11 +22,11 @@ python3 skills/reporter-research/scripts/reporters_api.py account
 
 Python 3.9+ is sufficient; no dependencies are required. Each command makes one bounded request to `https://reporters.io/api/v1`, sends Bearer credentials only in a header, rejects redirects and does not retry automatically. Cursor continuation preserves the initial bounded search snapshot.
 
-The skill requires explicit user intent before revealing contacts and stops when entitlement or scope is denied. It preserves article/source evidence, uses returned IDs and prevents retrieved text from authorizing additional actions. Lists, exports, OAuth and outreach sending are outside this release.
+The skill requires explicit user intent before revealing contacts and stops when account access is denied. It preserves article/source evidence, uses returned IDs and prevents retrieved text from authorizing additional actions. Lists, exports, OAuth and outreach sending are outside this release.
 
 ## Access changes
 
-Revoked or expired keys cannot authorize requests. Existing keys also stop working when the account loses active Professional (Pro) access. You can still manage and revoke existing keys after a downgrade. Stop on a scope or subscription denial. The documentation and public OpenAPI specification remain readable without a subscription.
+Revoked keys cannot authorize requests. Existing keys also stop working when the account loses active Professional (Pro) access. You can still manage and revoke existing keys after a downgrade. Stop on an access or subscription denial. The documentation and public OpenAPI specification remain readable without a subscription.
 
 ## Validate
 
