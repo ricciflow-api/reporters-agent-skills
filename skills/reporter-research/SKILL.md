@@ -1,6 +1,6 @@
 ---
 name: reporter-research
-description: Research reporters, media outlets and published articles through Reporters.io. Use for journalist discovery, beat research, source evidence or outlet research. Reveal contact information only when the user explicitly requests it and the account is entitled; excludes outreach sending, bulk contact enumeration, lists and exports.
+description: Research reporters, media outlets and published articles through Reporters.io with an active Professional (Pro) subscription. Use for journalist discovery, beat research, source evidence or outlet research. Reveal contact information only when the user explicitly requests it and the account is entitled; excludes outreach sending, bulk contact enumeration, lists and exports.
 ---
 
 # Reporter and outlet research with Reporters.io
@@ -8,6 +8,10 @@ description: Research reporters, media outlets and published articles through Re
 Prefer the hosted MCP server at `https://reporters.io/api/mcp`. It exposes `search_reporters`, `get_reporter`, `list_reporter_articles`, `search_outlets`, `get_outlet`, `list_outlet_reporters`, `list_outlet_articles`, `get_account`, `get_search_filters`, and the separate `reveal_reporter_contacts` / `reveal_outlet_contacts` tools.
 
 Identify the topic, geography, relevant beat or outlet, and a bounded request budget. Start with one page of up to 10 results. Check `get_search_filters` for supported values rather than inventing them. Use the returned profile `id` as the `reporter_id` numeric string or `outlet_id` UUID string in tool inputs; do not guess IDs or enumerate the database.
+
+## Access requirements
+
+Creating API keys and all REST API and MCP use require an active Professional (Pro) subscription. This includes MCP initialization and tool discovery. Revoked or expired keys cannot authorize requests; existing keys also stop working when the account loses active Pro access. Stop on scope or subscription denial without trying another account or interface. The user can still manage and revoke existing keys after a downgrade. The public documentation and OpenAPI specification remain readable without a subscription.
 
 ## Choose a workflow
 

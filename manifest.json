@@ -1,7 +1,7 @@
 {
   "name": "reporters-agent-skills",
   "version": "1.0.0",
-  "description": "Reporter and media-outlet research through Reporters.io",
+  "description": "Reporter and media-outlet research through Reporters.io with active Professional (Pro) access",
   "homepage": "https://reporters.io",
   "repository": "https://github.com/ricciflow-api/reporters-agent-skills",
   "license": "MIT",
@@ -9,7 +9,7 @@
     {
       "name": "reporter-research",
       "path": "skills/reporter-research",
-      "description": "Research reporters, media outlets and published articles; reveal contacts only when explicitly requested and entitled."
+      "description": "Research reporters, media outlets and articles with active Professional (Pro) access; reveal contacts only when explicitly requested and permitted."
     }
   ]
 }
