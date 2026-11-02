@@ -5,14 +5,16 @@ Installable guidance for reporter, media-outlet and article research through [Re
 ## Install
 
 ```bash
-npx skills add ricciflow-api/reporters-agent-skills
+npx skills add ricciflow-api/reporters-agent-skills --skill reporter-research
 ```
 
-You can also copy `skills/reporter-research` to your project's skills directory. The helper does not change global configuration or install itself.
+The installer requires Node.js 22.20 or later and lets you choose a supported agent such as Claude Code, Cursor, or Codex. To target one agent, append `-a claude-code`, `-a cursor`, or `-a codex`. See the [skills installer reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
+
+You can also use a skill installer with [reporter-research skill directory](https://github.com/ricciflow-api/reporters-agent-skills/tree/main/skills/reporter-research) and path `skills/reporter-research`, or copy that directory to your project's skills directory. Invoke `$reporter-research` in a client that supports named skill invocation. The helper does not change global configuration or install itself.
 
 ## Configure and run
 
-With an active Professional (Pro) subscription, create a key by entering a name in [API-key management](https://reporters.io/account/api-keys). All six API permissions are included automatically, with no automatic expiration. Accounts can have up to 10 active keys, and keys can be revoked. Connect the [hosted MCP server](https://github.com/ricciflow-api/reporters-mcp) or load your API key through the `REPORTERS_API_KEY` environment variable and run:
+With an active Professional (Pro) subscription, create a key by entering a name in [API-key management](https://reporters.io/developers/api/keys). All six API permissions are included automatically, with no automatic expiration. Accounts can have up to 10 active keys, and keys can be revoked. Connect the [hosted MCP server](https://github.com/ricciflow-api/reporters-mcp) or load your API key through the `REPORTERS_API_KEY` environment variable and run:
 
 ```bash
 python3 skills/reporter-research/scripts/reporters_api.py search-reporters --query 'climate technology' --limit 10
